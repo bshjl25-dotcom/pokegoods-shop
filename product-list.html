@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-container": "#fd5c5c",
+        "on-surface-variant": "#4f4633",
+        "surface-container-high": "#dee8ff",
+        "primary-container": "#fdc228",
+        "inverse-surface": "#263143",
+        "on-tertiary-fixed-variant": "#004c69",
+        "outline-variant": "#d3c5ac",
+        "on-secondary-container": "#60000c",
+        "secondary-fixed": "#ffdad7",
+        "on-secondary-fixed": "#410005",
+        "on-error": "#ffffff",
+        "on-primary": "#ffffff",
+        "tertiary": "#00668a",
+        "on-tertiary-container": "#005c7e",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#795900",
+        "secondary-fixed-dim": "#ffb3af",
+        "primary-fixed": "#ffdf9e",
+        "primary-fixed-dim": "#f8be22",
+        "error": "#ba1a1a",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed": "#261a00",
+        "on-surface": "#111c2d",
+        "surface-dim": "#cfdaf2",
+        "on-primary-fixed-variant": "#5b4300",
+        "on-secondary-fixed-variant": "#910519",
+        "surface": "#f9f9ff",
+        "primary": "#795900",
+        "outline": "#817661",
+        "surface-variant": "#d8e3fb",
+        "surface-bright": "#f9f9ff",
+        "inverse-primary": "#f8be22",
+        "background": "#f9f9ff",
+        "tertiary-fixed": "#c4e7ff",
+        "surface-container": "#e7eeff",
+        "tertiary-fixed-dim": "#7bd0ff",
+        "on-background": "#111c2d",
+        "tertiary-container": "#89d4ff",
+        "on-tertiary-fixed": "#001e2c",
+        "surface-container-highest": "#d8e3fb",
+        "on-tertiary": "#ffffff",
+        "on-primary-container": "#6d5100",
+        "secondary": "#b4262d",
+        "inverse-on-surface": "#ecf1ff",
+        "on-error-container": "#93000a",
+        "error-container": "#ffdad6",
+        "surface-container-low": "#f0f3ff"
+      },
+      "borderRadius": {
+        "DEFAULT": "1rem",
+        "lg": "2rem",
+        "xl": "3rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-lg": "1.5rem",
+        "margin-desktop": "3rem",
+        "gutter": "1rem",
+        "space-xl": "2.5rem",
+        "space-md": "1rem",
+        "gutter-desktop": "2rem",
+        "margin": "1rem",
+        "margin-tablet": "2rem",
+        "gutter-tablet": "1.5rem",
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "display-lg-mobile": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "body-md": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "display-lg-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+        "display-lg": ["48px", {"lineHeight": "58px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "800"}],
+        "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "headline-xl-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700"}],
+        "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "500"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+      }
+    }
+  }
+}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_-2px_rgba(253,194,40,0.12)]"><div class="h-28 w-full flex flex-col justify-between"><div class="w-full bg-primary-container text-on-primary-container px-margin-desktop py-space-xs flex items-center justify-between font-label-md text-label-md"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-base text-secondary">bolt</span><span>⚡ 포켓몬 신상 슬리퍼 &amp; 잠만보 바디필로우 출시! 전 상품 3만원 이상 무료배송 🚚</span></div><div class="flex items-center gap-space-md"><span class="hover:underline cursor-pointer">공식 라이선스 인증</span><span class="hover:underline cursor-pointer">배송조회</span><span class="hover:underline cursor-pointer">고객센터</span></div></div><div class="w-full max-w-7xl mx-auto px-margin-desktop flex items-center justify-between gap-gutter-desktop h-16"><div class="flex items-center gap-space-md shrink-0"><div class="w-11 h-11 rounded-full bg-surface-container-lowest shadow-[0_2px_8px_rgba(253,194,40,0.2)] flex items-center justify-center"><img alt="Logo" class="w-8 h-8 rounded-full object-cover" src="assets/img-001.jpg"/></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">포케굿즈샵</span><span class="font-label-sm text-label-sm text-primary tracking-widest leading-none mt-1 uppercase">PokéGoods Shop</span></div></div><div class="flex-1 max-w-xl mx-space-lg"><div class="relative flex items-center w-full bg-surface-container-low rounded-full px-space-md py-space-xs border border-outline-variant/40 shadow-inner focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary-container transition-all"><span class="material-symbols-outlined text-primary text-xl mr-space-xs">search</span><input class="w-full bg-transparent outline-none font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60" placeholder="포켓몬 인형, 잠만보 쿠션, 이브이 키링 검색!" type="text"/><button class="bg-secondary text-on-secondary px-space-md py-1 rounded-full font-label-sm text-label-sm hover:bg-secondary/90 transition-all shrink-0" type="button">검색</button></div></div><div class="flex items-center gap-space-md shrink-0"><button class="relative flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-secondary transition-all" type="button"><span class="material-symbols-outlined">favorite</span><span class="absolute -top-1 -right-1 bg-secondary text-on-secondary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold">5</span></button><button class="relative flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" type="button"><span class="material-symbols-outlined">shopping_bag</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold">3</span></button><div class="flex items-center gap-space-sm bg-surface-container-low py-1 pl-1 pr-space-md rounded-full shadow-sm hover:bg-surface-container cursor-pointer transition-all"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="assets/img-001.jpg"/><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface">지우님</span><span class="font-label-sm text-label-sm text-primary">Lv.25 트레이너</span></div></div></div></div></div><nav class="w-full bg-surface-container-lowest/80 border-t border-b border-surface-container-high/40" data-active-classes="bg-primary-container text-on-primary-container font-bold"><div class="max-w-7xl mx-auto px-margin-desktop flex items-center gap-space-md overflow-x-auto py-space-xs"><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" data-path="home" href="#">홈</a><a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all whitespace-nowrap bg-primary-container text-on-primary-container font-bold" data-path="all-goods" href="#">전체 굿즈 / 카테고리</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" data-path="plush-and-cushions" href="#">인형 &amp; 쿠션</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" data-path="figures-and-acrylic" href="#">피규어 &amp; 아크릴</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" data-path="stationery-and-fancy" href="#">문구 &amp; 팬시</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" data-path="fashion-and-living" href="#">패션 &amp; 리빙</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" data-path="eevee-special" href="#">✨ 이브이즈 특별전</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" data-path="lucky-box" href="#">⚡ 한정 럭키박스</a></div></nav></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle ambient decorative glow spheres -->
+<div class="relative w-full max-w-7xl mx-auto px-margin-desktop py-space-md overflow-hidden">
+<div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -right-24 w-96 h-96 rounded-full bg-secondary-container/15 blur-3xl pointer-events-none"></div>
+<!-- Sub-header Promo Banner (Warm Pop Pill Card) -->
+<div class="relative w-full rounded-3xl bg-gradient-to-r from-surface-container-lowest via-surface-container-low to-surface-container p-space-lg mb-space-lg shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-lg overflow-hidden">
+<!-- Decorative background Pokeball watermark pattern -->
+<div class="absolute right-4 -bottom-10 opacity-5 pointer-events-none text-on-surface">
+<svg class="w-64 h-64" fill="currentColor" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="46" stroke="currentColor" stroke-width="8"></circle>
+<line stroke="currentColor" stroke-width="8" x1="4" x2="96" y1="50" y2="50"></line>
+<circle cx="50" cy="50" fill="none" r="14" stroke="currentColor" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="currentColor" r="6"></circle>
+</svg>
+</div>
+<div class="flex items-center gap-space-lg relative z-10">
+<div class="relative shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-primary-container flex items-center justify-center shadow-md">
+<span class="text-4xl select-none">🧸</span>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full shadow-sm font-extrabold tracking-wider">OFFICIAL</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm tracking-wider uppercase px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-extrabold">ORIGINAL COLLECTION</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold">100% 정품 인증</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mt-1">인형 &amp; 쿠션 (Plush &amp; Cushions)</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">쫀득하고 말랑한 정품 포켓몬 인형 모음전 · 총 <strong class="text-secondary font-extrabold">148개</strong>의 굿즈 입고 완료</p>
+</div>
+</div>
+<!-- Quick Benefit Badges -->
+<div class="flex items-center gap-space-sm relative z-10 shrink-0 self-stretch md:self-auto justify-end">
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded-2xl shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-extrabold">3만원 이상</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">전국 무료배송</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded-2xl shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-extrabold">오후 2시 전</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">오늘 바로 출발</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main 2-Column Catalog Framework (Left Sticky Rail + Right Product Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT SIDEBAR: Dynamic Filter Rail -->
+<aside class="lg:col-span-3 flex flex-col gap-space-md bg-surface-container-lowest rounded-3xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">정밀 필터</h2>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-xs">restart_alt</span>
+<span>초기화</span>
+</button>
+</div>
+<!-- 1. 캐릭터별 체크박스 -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">포켓몬 캐릭터</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">인기순</span>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<label class="flex items-center justify-between p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<span class="flex items-center gap-space-sm">
+<input checked="" class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary font-bold">피카츄</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-extrabold">42</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<span class="flex items-center gap-space-sm">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary">잠만보</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">18</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<span class="flex items-center gap-space-sm">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary">메타몽</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">25</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<span class="flex items-center gap-space-sm">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary">이브이</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">31</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<span class="flex items-center gap-space-sm">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary">팬텀</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">15</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<span class="flex items-center gap-space-sm">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary">뮤</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">12</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<span class="flex items-center gap-space-sm">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary">꼬부기</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">19</span>
+</label>
+</div>
+</div>
+<!-- 2. 인형 크기 칩 선택 -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">인형 크기 규격</span>
+<div class="grid grid-cols-2 gap-space-xs mt-space-xs">
+<button class="px-space-sm py-2 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex flex-col items-center justify-center hover:bg-primary-container transition-all" type="button">
+<span>미니 키링</span>
+<span class="text-on-surface-variant font-normal text-xs">10cm 내외</span>
+</button>
+<button class="px-space-sm py-2 rounded-xl bg-primary-container text-on-primary-container font-label-sm text-label-sm font-extrabold flex flex-col items-center justify-center shadow-sm" type="button">
+<span>베이직</span>
+<span class="font-normal text-xs">25cm 표준</span>
+</button>
+<button class="px-space-sm py-2 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex flex-col items-center justify-center hover:bg-primary-container transition-all" type="button">
+<span>중형 안기용</span>
+<span class="text-on-surface-variant font-normal text-xs">40cm 품에 쏙</span>
+</button>
+<button class="px-space-sm py-2 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex flex-col items-center justify-center hover:bg-primary-container transition-all" type="button">
+<span>자이언트 대형</span>
+<span class="text-on-surface-variant font-normal text-xs">80cm+ 바디</span>
+</button>
+</div>
+</div>
+<!-- 3. 속성 & 테마 -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">컬렉션 테마</span>
+<div class="flex flex-wrap gap-space-xs mt-space-xs">
+<button class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold shadow-sm" type="button">
+              🌙 수면/꿀잠 시리즈
+            </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-primary-container transition-all" type="button">
+              🍡 파스텔 모찌
+            </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-primary-container transition-all" type="button">
+              👑 코스튬 에디션
+            </button>
+<button class="px-3 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold hover:bg-tertiary-fixed-dim transition-all" type="button">
+              ✨ 포켓몬센터 한정
+            </button>
+</div>
+</div>
+<!-- 4. 가격대 슬라이더 (10,000원 ~ 150,000원) -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">가격대 범위</span>
+<span class="font-label-sm text-label-sm text-secondary font-extrabold" id="priceDisplay">10,000원 ~ 75,000원</span>
+</div>
+<div class="py-space-xs">
+<input class="w-full h-2 rounded-lg bg-surface-container accent-secondary cursor-pointer" id="priceSlider" max="150000" min="10000" step="5000" type="range" value="75000"/>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span>10,000원</span>
+<span>150,000원</span>
+</div>
+</div>
+</div>
+<!-- 5. 혜택 필터 토글 리스트 -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">쇼핑 혜택</span>
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<label class="flex items-center gap-space-sm p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">check_circle</span> 무료배송 상품
+              </span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">rocket_launch</span> 당일 출고
+              </span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">percent</span> 할인 상품 보기
+              </span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded-xl hover:bg-surface-container-low cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary accent-secondary focus:ring-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">redeem</span> 포켓몬 스티커 사은품 증정
+              </span>
+</label>
+</div>
+</div>
+<!-- Apply Button -->
+<button class="w-full mt-space-sm py-space-sm rounded-full bg-secondary text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary/90 transition-all active:translate-y-0.5" type="button">
+          필터 적용하기 (148개)
+        </button>
+</aside>
+<!-- RIGHT PRODUCT LIST SECTION -->
+<main class="lg:col-span-9 flex flex-col gap-space-lg">
+<!-- Top Controls Bar (Sorting & Layout Switcher) -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm overflow-x-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider shrink-0 mr-1">정렬</span>
+<button class="px-3 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-extrabold whitespace-nowrap shadow-xs" type="button">인기순 👑</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container whitespace-nowrap" type="button">신상품순</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container whitespace-nowrap" type="button">낮은가격순</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container whitespace-nowrap" type="button">높은가격순</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container whitespace-nowrap" type="button">리뷰많은순</button>
+</div>
+<div class="flex items-center justify-end gap-space-sm shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface-variant">표시 <strong>8</strong> / 148</span>
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl">
+<button aria-label="Grid view 4 cols" class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface shadow-xs flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+</button>
+<button aria-label="Grid view large" class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-lg">view_module</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Grid (4x2 on desktop, 3x3 responsive layout) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Product Card 1: 메타몽 변신 피카츄 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A soft squishy plush cushion of Pikachu disguised as Ditto with simplified cute dot eyes and wavy smile, ultra cozy pastel bright lighting, studio commercial shot on soft cream surface with playful yellow and lavender accents" src="assets/img-025.jpg"/>
+<!-- Pill Badge -->
+<span class="absolute top-2.5 left-2.5 bg-secondary text-on-secondary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold shadow-sm">
+                한정판 뱃지
+              </span>
+<!-- Heart Wishlist -->
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-extrabold uppercase tracking-wide">Ditto × Pikachu</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-1 mt-0.5">
+                  메타몽 변신 피카츄 폼 쿠션
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">4.9</span>
+<span>(128)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary line-through">38,000원</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">32,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary-container/80 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('메타몽 변신 피카츄 폼 쿠션')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2: 잠만보 꿀잠 낮잠베개 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Chubby giant Snorlax sleeping nap pillow plush, ultra plush microfiber texture, calming deep teal-blue and cream tones, soft nap atmosphere with dreamy soft warm ambient glow, studio e-commerce character product photo" src="assets/img-026.jpg"/>
+<span class="absolute top-2.5 left-2.5 bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold shadow-sm">
+                무료배송 🚚
+              </span>
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary font-extrabold uppercase tracking-wide">Snorlax Nap Series</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-tertiary transition-colors line-clamp-1 mt-0.5">
+                  잠만보 꿀잠 낮잠베개
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">5.0</span>
+<span>(342)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">특가 진행중</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">29,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary-container/80 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('잠만보 꿀잠 낮잠베개')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3: 이브이 꽃화관 봄 에디션 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Eevee plush doll wearing a colorful pastel flower crown wreath on its head, fluffy brown fur texture with creamy mane, bright spring cherry blossom petal lighting, Japanese pop toy aesthetic high resolution photography" src="assets/img-027.jpg"/>
+<span class="absolute top-2.5 left-2.5 bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold shadow-sm">
+                MD추천 🌸
+              </span>
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-extrabold uppercase tracking-wide">Eevee Spring Limited</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-1 mt-0.5">
+                  이브이 꽃화관 봄 에디션 봉제인형
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">4.8</span>
+<span>(95)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold">10% OFF</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">35,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary-container/80 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('이브이 꽃화관 봉제인형')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4: 팬텀 혓바닥 롤 카펫 겸 인형 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Gengar purple plush monster cushion with an extraordinarily long roll-out pink tongue carpet mat, mischievous playful smile and red eyes, cozy gaming bedroom floor setting, stylish soft lighting" src="assets/img-028.jpg"/>
+<span class="absolute top-2.5 left-2.5 bg-error-container text-on-error-container font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span> 품절임박 3개
+              </span>
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-extrabold uppercase tracking-wide">Gengar Interior Drop</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-secondary transition-colors line-clamp-1 mt-0.5">
+                  팬텀 혓바닥 롤 카펫 겸 인형
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">4.9</span>
+<span>(210)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">재입고 완료</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">48,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-secondary text-on-secondary flex items-center justify-center hover:bg-secondary/90 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('팬텀 혓바닥 롤 카펫')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5: 야돈 멍때리기 롱 쿠션 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Slowpoke long soft body pillow cushion plush lying down flat with an adorably dazed expression, pastel pink soft velvet fabric, pastel sunny afternoon interior lighting, plush collectible merchandize photography" src="assets/img-029.jpg"/>
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-extrabold uppercase tracking-wide">Slowpoke Relax</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-1 mt-0.5">
+                  야돈 멍때리기 롱 쿠션 (70cm)
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">4.9</span>
+<span>(64)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">무료 선물포장</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">42,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary-container/80 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('야돈 멍때리기 롱 쿠션')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6: 토게피 알 속 인형 파우치 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Togepi smiling plush pouch sitting inside cracked patterned eggshell with red and blue triangular markings, soft white egg plush texture, cheerful brightly lit studio shot on wooden table" src="assets/img-030.jpg"/>
+<span class="absolute top-2.5 left-2.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold shadow-sm">
+                파우치 겸용 🎒
+              </span>
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-extrabold uppercase tracking-wide">Togepi Shell Series</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-1 mt-0.5">
+                  토게피 알 속 인형 파우치
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">4.7</span>
+<span>(87)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">정가</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">22,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary-container/80 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('토게피 알 속 인형 파우치')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 7: 꼬부기 등껍질 푹신 방석 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Squirtle turtle shell round soft chair cushion seating pad, caramel brown geometric shell hexagon pattern with white fluffy rim, clean modern wooden chair setup, bright friendly natural lighting" src="assets/img-031.jpg"/>
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary font-extrabold uppercase tracking-wide">Living Deco</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-tertiary transition-colors line-clamp-1 mt-0.5">
+                  꼬부기 등껍질 푹신 방석
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">4.8</span>
+<span>(143)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">쿠션감 5성급</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">26,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary-container/80 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('꼬부기 등껍질 푹신 방석')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 8: 파이리 꼬리불빛 키링 인형 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-3xl p-space-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+<div class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Charmander mini plush keychain doll with a small glowing warm LED light at the tip of its fiery tail, bright orange plush body with sweet happy face, hanging on a cute pastel backpack, commercial product photo" src="assets/img-032.jpg"/>
+<span class="absolute top-2.5 left-2.5 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold shadow-sm">
+                LED 불빛 점등 🔥
+              </span>
+<button aria-label="찜하기" class="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant hover:text-secondary flex items-center justify-center shadow-sm transition-transform active:scale-125" onclick="toggleHeart(this)" type="button">
+<span class="material-symbols-outlined text-xl transition-colors">favorite</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-between mt-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-extrabold uppercase tracking-wide">Charmander Keyring</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-secondary transition-colors line-clamp-1 mt-0.5">
+                  파이리 꼬리불빛 키링 인형
+                </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-extrabold text-on-surface">4.9</span>
+<span>(52)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">배터리 포함</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-none">16,000<span class="text-sm font-normal ml-0.5">원</span></span>
+</div>
+<button class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary-container/80 transition-transform active:scale-95 shadow-sm" onclick="quickAddToCart('파이리 꼬리불빛 키링 인형')" title="장바구니 담기" type="button">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pokéball Pagination Design Section -->
+<div class="w-full flex items-center justify-center my-space-lg">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
+<!-- Previous Button -->
+<button aria-label="이전 페이지" class="w-10 h-10 rounded-full flex items-center justify-center text-outline-variant cursor-not-allowed opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<!-- Page 1 (Active Pokeball) -->
+<button aria-current="page" class="relative w-11 h-11 rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden shadow-md group transform transition-transform active:scale-95" type="button">
+<!-- Top half Pokéball red -->
+<div class="absolute top-0 left-0 right-0 h-1/2 bg-secondary group-hover:brightness-110"></div>
+<!-- Bottom half Pokéball white -->
+<div class="absolute bottom-0 left-0 right-0 h-1/2 bg-surface-container-lowest"></div>
+<!-- Pokéball horizontal center line -->
+<div class="absolute top-1/2 left-0 right-0 h-1 -mt-0.5 bg-inverse-surface"></div>
+<!-- Center button circle with active number 1 -->
+<div class="relative z-10 w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center text-inverse-surface font-label-md text-label-md font-black shadow-sm">
+                1
+              </div>
+</button>
+<!-- Page 2 -->
+<button class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg font-bold flex items-center justify-center transition-all" type="button">
+              2
+            </button>
+<!-- Page 3 -->
+<button class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg font-bold flex items-center justify-center transition-all" type="button">
+              3
+            </button>
+<!-- Page 4 -->
+<button class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg font-bold flex items-center justify-center transition-all" type="button">
+              4
+            </button>
+<!-- Page 5 -->
+<button class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg font-bold flex items-center justify-center transition-all" type="button">
+              5
+            </button>
+<!-- Next Button -->
+<button aria-label="다음 페이지" class="w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-all" type="button">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Toast Notification Bar for Cart Interaction -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="flex items-center gap-space-sm bg-inverse-surface text-inverse-on-surface px-space-lg py-space-sm rounded-2xl shadow-xl">
+<span class="material-symbols-outlined text-primary-container text-2xl">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold" id="toastTitle">장바구니에 쏙 담겼습니다!</span>
+<span class="font-body-sm text-body-sm text-outline-variant">포켓몬 굿즈 상자에서 확인해보세요.</span>
+</div>
+</div>
+</div>
+<!-- Micro-interaction Vanilla Scripts -->
+<script>
+    // Price Slider Live Label
+    const priceSlider = document.getElementById('priceSlider');
+    const priceDisplay = document.getElementById('priceDisplay');
+    if (priceSlider && priceDisplay) {
+      priceSlider.addEventListener('input', (e) => {
+        const val = Number(e.target.value).toLocaleString();
+        priceDisplay.textContent = `10,000원 ~ ${val}원`;
+      });
+    }
+
+    // Toggle Wishlist Heart State
+    function toggleHeart(button) {
+      const icon = button.querySelector('.material-symbols-outlined');
+      if (icon) {
+        const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+        if (isFilled) {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          button.classList.remove('text-secondary');
+          button.classList.add('text-on-surface-variant');
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          button.classList.remove('text-on-surface-variant');
+          button.classList.add('text-secondary');
+        }
+      }
+    }
+
+    // Quick Add To Cart Micro Interaction with Toast
+    let toastTimeout;
+    function quickAddToCart(productName) {
+      const toast = document.getElementById('toastNotification');
+      const toastTitle = document.getElementById('toastTitle');
+      if (!toast || !toastTitle) return;
+
+      toastTitle.textContent = `${productName} 장바구니 추가!`;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2500);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-surface-container-highest mt-margin-desktop"><div class="max-w-7xl mx-auto px-margin-desktop py-space-xl flex flex-col gap-space-lg"><div class="flex flex-wrap items-start justify-between gap-gutter-desktop"><div class="flex flex-col gap-space-sm max-w-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary shadow-sm"><span class="material-symbols-outlined text-sm">20mp</span></div><span class="font-headline-sm text-headline-sm text-on-surface">포케굿즈샵</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">공식 라이선스를 보유한 포켓몬 정품 굿즈 셀렉트숍입니다. 모든 상품은 정밀 검수 후 안전 안심 패키징으로 배송됩니다.</p><div class="flex items-center gap-space-sm mt-space-xs"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-secondary font-bold"><span class="material-symbols-outlined text-sm">verified</span> 공식 라이선스 정품</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-tertiary font-bold"><span class="material-symbols-outlined text-sm">local_shipping</span> 안전 뽁뽁이 완충포장</span></div></div><div class="flex flex-col gap-space-xs"><span class="font-label-lg text-label-lg text-on-surface font-bold">고객만족센터</span><span class="font-headline-lg text-headline-lg text-secondary font-bold">1588-POKE</span><span class="font-body-sm text-body-sm text-on-surface-variant">운영시간: 평일 10:00 ~ 18:00 (점심시간 12:30 ~ 13:30)</span><span class="font-body-sm text-body-sm text-on-surface-variant">주말 및 공휴일: 1:1 챗봇 상담 운영</span></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-bold">포켓몬 커뮤니티 SNS</span><div class="flex items-center gap-space-sm"><a class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all shadow-sm" href="#"><span class="material-symbols-outlined">share</span></a><a class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all shadow-sm" href="#"><span class="material-symbols-outlined">chat</span></a><a class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all shadow-sm" href="#"><span class="material-symbols-outlined">photo_camera</span></a></div></div></div><div class="border-t border-surface-container-highest/60 pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-surface-variant/80">© 2024 PokéGoods Shop Corp. All Rights Reserved. ©2024 Pokémon. ©1995-2024 Nintendo/Creatures Inc./GAME FREAK inc.</p><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:underline" href="#">이용약관</a><a class="hover:underline font-bold text-on-surface" href="#">개인정보처리방침</a><a class="hover:underline" href="#">정품인증조회</a></div></div></div></footer><!-- Stitch preview: screen switcher (safe to delete this block) -->
+<nav id="stitch-screen-switcher" aria-label="화면 전환" style="position:fixed;right:16px;bottom:16px;z-index:2147483647;display:flex;gap:4px;align-items:center;background:rgba(17,28,45,.92);padding:6px;border-radius:9999px;box-shadow:0 10px 30px rgba(17,28,45,.35);backdrop-filter:blur(8px);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:13px;font-weight:700;line-height:1">
+<span style="color:#8fa3c0;padding:0 8px 0 4px;font-size:11px;font-weight:800;letter-spacing:.04em">SCREENS</span>
+<a href="index.html" style="background:transparent;color:#e7eeff;text-decoration:none;padding:8px 14px;border-radius:9999px;white-space:nowrap">메인 홈</a><a href="product-list.html" style="background:#fdc228;color:#111c2d;text-decoration:none;padding:8px 14px;border-radius:9999px;white-space:nowrap">상품 목록</a><a href="product-detail.html" style="background:transparent;color:#e7eeff;text-decoration:none;padding:8px 14px;border-radius:9999px;white-space:nowrap">상품 상세</a><a href="cart-checkout.html" style="background:transparent;color:#e7eeff;text-decoration:none;padding:8px 14px;border-radius:9999px;white-space:nowrap">장바구니</a>
+</nav>
+<!-- /Stitch preview -->
+</body></html>
